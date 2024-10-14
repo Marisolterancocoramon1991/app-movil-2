@@ -1,0 +1,65 @@
+/* Splash Screen Styles */
+#splash-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--custom-blue-dark); /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+    animation: fadeIn 2s forwards; /* Animación de entrada */
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0; /* Comienza invisible */
+    }
+    100% {
+      opacity: 1; /* Termina visible */
+    }
+  }
+  
+  /* Animaciones del nombre */
+  .name {
+    margin-top: 10%;
+    color: var(--white);
+    font-size: 10vw;
+    font-weight: bold;
+    font-family: 'Borel';
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Comienza desplazado */
+    animation: slideIn 1s forwards; /* Animación de entrada para el nombre */
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0; /* Comienza invisible */
+      transform: translateY(20px); /* Comienza desplazado */
+    }
+    100% {
+      opacity: 1; /* Termina visible */
+      transform: translateY(0); /* Regresa a la posición original */
+    }
+  }
+  
+  /* Animación para el logo */
+  .container img {
+    opacity: 0; /* Comienza invisible */
+    transform: scale(0.8); /* Comienza más pequeño */
+    animation: zoomIn 1s forwards; /* Animación de entrada para el logo */
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      opacity: 0; /* Comienza invisible */
+      transform: scale(0.8); /* Comienza más pequeño */
+    }
+    100% {
+      opacity: 1; /* Termina visible */
+      transform: scale(1); /* Termina en tamaño normal */
+    }
+  }
+  

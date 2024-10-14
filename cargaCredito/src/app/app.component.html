@@ -1,0 +1,38 @@
+<div class="my-overlay" *ngIf="showOverlay">
+  <div class="rotate-center">
+    <img src="../assets/images/cargaCredito.png" alt="Logo" class="imgOverlay">
+  </div>
+</div>
+
+<div class="my-loading bg-blue" *ngIf="showLoading"></div>
+<div class="my-loading heartbeat d-flex flex-wrap justify-content-center align-content-center" *ngIf="showLoading">
+  <img src="../assets/images/cargaCredito.png" alt="Logo" class="imgLoading">
+</div>
+
+
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+  <ng-container *ngIf="showLogout">
+    <!-- <button (click)="this.userLogout()" class="btn btn-danger fixed-bottom m-2 d-flex align-items-center" style="height: 3rem;">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <p>Cerrar sesión</p>
+    </button>     -->
+    <ion-button (click)="userLogout()" expand="full" class="fixed-bottom d-flex flex-column justify-items-center" id="delete-credits"
+    color="danger">
+    <ion-icon name="log-out-outline" size="large"></ion-icon>
+    Cerrar sesión
+    </ion-button>
+  </ng-container>  
+</ion-app>
+<!-- 
+<ng-container *ngIf="showLogout">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="this.userLogout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>  
+</ng-container> -->
+
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

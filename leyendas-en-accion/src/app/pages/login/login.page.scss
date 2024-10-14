@@ -1,0 +1,14 @@
+.bg {
+    background-image: url('../../../assets/images/BG.png');
+    background-repeat: no-repeat; 
+    background-size: cover; /* Cambié para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-color: #cccccc; /* Color de fondo de respaldo */
+    height: 100%;
+    width: 100%;
+  }
+    
+  ion-fab {
+    margin-bottom: var(--ion-safe-area-bottom, 5rem);
+  }
+  

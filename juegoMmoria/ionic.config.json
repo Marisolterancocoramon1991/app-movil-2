@@ -1,0 +1,7 @@
+{
+  "name": "juegoMmoria",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

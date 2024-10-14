@@ -1,0 +1,41 @@
+/* Fondo responsivo */
+.bg {
+    background-image: url('../../../assets/images/bglogin.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #cccccc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Estilos simples para botones */
+ion-button {
+    display: block;
+    width: 90%; /* Ajuste de ancho para pantallas de teléfono */
+    max-width: 400px;
+    padding: 0.5rem; /* Padding simple para evitar que sean demasiado altos */
+    margin: 0.5rem auto; /* Espacio entre los botones */
+    font-size: 1rem; /* Tamaño de texto moderado */
+    font-weight: bold;
+    border-radius: 12px; /* Bordes ligeramente redondeados para un diseño limpio */
+    background-color: #4CAF50; /* Color sólido para el fondo del botón */
+    color: white; /* Texto en blanco */
+    text-align: center; /* Centrar texto */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+/* Efecto hover para los botones */
+ion-button:hover {
+    background-color: #45a049; /* Un poco más oscuro en hover */
+}
+
+/* Ajuste del contenido para el botón */
+ion-button div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

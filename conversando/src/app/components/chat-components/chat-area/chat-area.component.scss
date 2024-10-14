@@ -1,0 +1,118 @@
+.chat-area-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;    
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.chat-box {
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.chat-area-container .box{
+    position: absolute;    
+    bottom: 0;    
+    width: 100%;
+}
+
+.bubble {
+  display:flex;
+    --r: 25px; /* the radius */
+    --t: 10px; /* the size of the tail */
+    
+    max-width: 90%;
+    padding: calc(2*var(--r)/3);
+   
+    background: linear-gradient(135deg,#fd5d93,#e14eca) border-box;
+    color: #fff;
+    margin:10px;    
+  }
+
+  
+  .left {
+    --_d: 0%;
+    border-left: var(--t) solid #0000;
+    background: linear-gradient(135deg,var(--custom-blue-dark),var(--custom-blue-dark)) border-box;
+    margin-right: var(--t);
+    place-self: start;        
+  }
+  .leftA {
+    --_d: 0%;
+    border-left: var(--t) solid #0000;
+    background: linear-gradient(135deg,var(--ion-color-success),var(--ion-color-success)) border-box;
+    margin-right: var(--t);
+    place-self: start;        
+  }
+  .leftB {
+    --_d: 0%;
+    border-left: var(--t) solid #0000;
+    background: linear-gradient(135deg,var(--ion-color-warning),var(--ion-color-warning)) border-box;
+    margin-right: var(--t);
+    place-self: start;      
+    color: #000;  
+  }
+  .right {
+    --_d: 100%;
+    border-right: var(--t) solid #0000;
+    background: linear-gradient(135deg,lightblue,lightblue) border-box;
+    color:#000;
+    margin-left: var(--t);
+    place-self: end;
+  }
+  .rightA {
+    --_d: 100%;
+    border-right: var(--t) solid #0000;
+    background: linear-gradient(135deg,lightblue,lightblue) border-box;
+    color:#000;
+    margin-left: var(--t);
+    place-self: end;
+  }
+  .rightB {
+    --_d: 100%;
+    border-right: var(--t) solid #0000;
+    background: linear-gradient(135deg,lightblue,lightblue) border-box;
+    color:#000;
+    margin-left: var(--t);
+    place-self: end;
+  }
+  
+
+  .bubble span{    
+    padding-left: 10px;
+    align-self: flex-end;
+    opacity: 70%;
+    position: relative;
+    bottom:-15px;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    gap: 20px;
+    font-family: system-ui, sans-serif;
+    font-size: 20px;
+  }
+
+  .bubble span.name{    
+    //padding-left: 10px;
+    align-self: flex-start;
+    opacity: 100%;
+    padding-left:static;    
+    padding: 0px;
+    bottom: 0px;
+    font-weight:bold;
+  }
+
+  .box{
+    margin-top: 20px;
+  }

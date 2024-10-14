@@ -1,0 +1,39 @@
+.splash-bg {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Asegúrate de que la imagen cubra toda la pantalla */
+  }
+  
+  .logo-animation {
+    width: 50%;
+    height: auto;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .name {
+    font-size: 2rem;
+    opacity: 0;
+    animation: fadeInUp 2s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

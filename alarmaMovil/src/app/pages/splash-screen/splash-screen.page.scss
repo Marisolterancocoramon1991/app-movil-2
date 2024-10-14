@@ -1,0 +1,74 @@
+/* Estilos base */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+  }
+
+.container {
+    position: absolute;
+}
+
+#splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dynamic-logo-container {
+    display: none; /* Ocultar inicialmente */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: moveUp 1s ease-in-out forwards, vibrate 0.1s infinite alternate 3s; /* Movimiento y vibración */
+    transition: background-color 1s ease; /* Transición suave del fondo */
+}
+
+
+
+@keyframes moveUp {
+    from {
+      transform: translateY(100%); /* Comienza desde abajo */
+    }
+    to {
+      transform: translateY(0); /* Termina en el centro */
+    }
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Estilos para las luces tipo alarma */
+.alarm-lights {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, red, transparent);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+}
+

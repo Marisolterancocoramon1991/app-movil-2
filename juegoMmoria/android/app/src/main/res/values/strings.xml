@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">juegoMmoria</string>
+    <string name="title_activity_main">juegoMmoria</string>
+    <string name="package_name">jueego.mmoria.pps</string>
+    <string name="custom_url_scheme">jueego.mmoria.pps</string>
+</resources>

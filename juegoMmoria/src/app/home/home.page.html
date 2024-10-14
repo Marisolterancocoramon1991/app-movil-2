@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Seleccione dificultad
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="bg">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Seleccione dificultad</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="button-container">
+    <ion-button expand="block" class="full-height-button" color="success" (click)="irAFacil()">
+      <div class="d-flex flex-column align-items-center">
+        <div class="text-container2 text-wrap">Fácil</div>
+        <label class="text-container3">3 pares</label>
+      </div>
+    </ion-button>
+    <ion-button expand="block" class="full-height-button" color="warning" (click)="irAMedio()">
+      <div class="d-flex flex-column align-items-center">
+        <div class="text-container2 text-wrap">Medio</div>
+        <label class="text-container3">5 pares</label>
+      </div>
+    </ion-button>
+    <ion-button expand="block" class="full-height-button" color="danger" (click)="irADificil()">
+      <div class="d-flex flex-column align-items-center">
+        <div class="text-container2 text-wrap">Difícil</div>
+        <label class="text-container3">8 pares</label>
+      </div>
+    </ion-button>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="irAScores()">
+    <ion-fab-button color="success">
+      <ion-icon name="stats-chart" size="large"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

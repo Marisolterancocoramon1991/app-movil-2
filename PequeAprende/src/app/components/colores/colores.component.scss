@@ -1,0 +1,64 @@
+.bg {
+    background-color: #ffcc00; /* Color de fondo amarillo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnAnimales {
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 10px; /* Espaciado entre botones */
+    transition: transform 0.2s; /* Efecto de transición al hacer hover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnAnimales:hover {
+    transform: scale(1.1); /* Escala al pasar el mouse */
+}
+
+.btnAnimales.marron {
+    background-color: #8B4513; /* Marrón */
+}
+
+.btnAnimales.rojo {
+    background-color: #FF6347; /* Rojo tomate */
+}
+
+.btnAnimales.verde {
+    background-color: #32CD32; /* Verde lima */
+}
+
+.btnAnimales.amarillo {
+    background-color: #FFD700; /* Amarillo dorado */
+}
+
+.btnAnimales.celeste {
+    background-color: #87CEEB; /* Celeste */
+}
+
+.btnAnimales.blanco {
+    background-color: #FFFFFF; /* Blanco */
+}
+
+.btnAnimales.naranja {
+    background-color: #FFA500; /* Naranja */
+}
+
+.btnAnimales.rosa {
+    background-color: #FF69B4; /* Rosa intenso */
+}
+
+@media (max-width: 768px) {
+    .btnAnimales {
+        width: 80%; /* Botones ocupan 80% en pantallas pequeñas */
+        height: 60px; /* Altura fija para los botones en móviles */
+    }
+}

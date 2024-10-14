@@ -1,0 +1,65 @@
+.bg {
+  background-image: url('../../../assets/images/bg.png');
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Cover the entire container */
+  background-color: #cccccc;
+  height: 100%;
+  width: 100%;
+}
+
+.text-container2 {
+  width: 100%; 
+  font-size: 12vw; /* Responsive text size */
+  overflow: wrap;
+  padding: 1rem; /* Uniform padding */
+  text-align: center; /* Center the text */
+}
+
+body.barcode-scanner-active {
+  visibility: hidden;
+  --background: transparent;
+  --ion-background-color: transparent;
+}
+
+.barcode-scanner-modal {
+  visibility: visible;
+  border-radius: 15px; /* Rounded corners for the modal */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add some shadow */
+}
+
+@media (prefers-color-scheme: dark) {
+  .barcode-scanner-modal {
+    --background: transparent;
+    --ion-background-color: transparent;
+  }
+}
+
+.btn ion-icon {
+  font-size: 50px; /* Size of the icon */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.quarter-button {
+  flex: 1;
+  padding: 5px;
+  border-radius: 10px; /* Rounded corners for buttons */
+  background-color: #007bff; /* Primary color, change as needed */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  font-size: 18px; /* Increase font size */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.quarter-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.quarter-button:active {
+  transform: scale(0.95); /* Button press effect */
+}

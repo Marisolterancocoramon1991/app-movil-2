@@ -1,0 +1,47 @@
+.bg {
+    background-color: #ffcc00; /* Color de fondo amarillo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnAnimales {
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 10px; /* Espaciado entre botones */
+    transition: transform 0.2s; /* Efecto de transición al hacer hover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Tamaño de fuente grande para los números */
+    color: white; /* Color del texto en blanco */
+    width: 80px; /* Ancho fijo para todos los botones */
+    height: 80px; /* Altura fija para todos los botones */
+}
+
+.btnAnimales:hover {
+    transform: scale(1.1); /* Escala al pasar el mouse */
+}
+
+.btnAnimales:nth-child(1) { background-color: #8B4513; } /* Marrón */
+.btnAnimales:nth-child(2) { background-color: #FF6347; } /* Rojo tomate */
+.btnAnimales:nth-child(3) { background-color: #32CD32; } /* Verde lima */
+.btnAnimales:nth-child(4) { background-color: #FFD700; } /* Amarillo dorado */
+.btnAnimales:nth-child(5) { background-color: #87CEEB; } /* Celeste */
+.btnAnimales:nth-child(6) { background-color: #FFFFFF; color: black; } /* Blanco */
+.btnAnimales:nth-child(7) { background-color: #FFA500; } /* Naranja */
+.btnAnimales:nth-child(8) { background-color: #FF69B4; } /* Rosa */
+.btnAnimales:nth-child(9) { background-color: #A020F0; } /* Púrpura */
+.btnAnimales:nth-child(10) { background-color: #C0C0C0; color: black; } /* Gris */
+
+@media (max-width: 768px) {
+    .btnAnimales {
+        width: 60%; /* Botones ocupan 60% en pantallas pequeñas */
+        height: 50px; /* Altura fija para los botones en móviles */
+    }
+}

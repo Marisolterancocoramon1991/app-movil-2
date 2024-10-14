@@ -1,0 +1,44 @@
+/* Estilo para mensajes de error */
+.error {
+    color: #ff3e3e; /* Rojo más brillante para el texto de error */
+    font-size: 14px; /* Tamaño de fuente ligeramente mayor */
+    margin-left: 1rem;
+}
+
+/* Estilo de separación horizontal */
+hr {
+    opacity: 0.8; /* Aumentar la opacidad para mayor visibilidad */
+    border-width: 0.2rem;
+    color: #4b99ff; /* Azul más claro para el borde */
+}
+
+/* Estilo de imágenes */
+img {
+    border-radius: 1.5rem; /* Bordes más redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidad */
+}
+
+/* Estilo de título */
+ion-title {
+    font-family: 'Borel', sans-serif; /* Asegurarse de que la fuente tenga respaldo */
+    color: #2c3e50; /* Color oscuro para el texto */
+    font-size: 24px; /* Tamaño de fuente más grande */
+    margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+/* Estilo de fondo */
+.bg {
+    background-image: url('../../../assets/images/bgRegister.png');
+    background-position: center; /* Centrar la imagen de fondo */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: cover; /* Cubrir todo el contenedor */
+    background-color: #f0f4f8; /* Color de fondo suave para contraste */
+    height: 100%;
+    width: 100%;
+    display: flex; /* Para permitir un mejor alineamiento de contenido */
+    align-items: center; /* Centrar contenido verticalmente */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    padding: 2rem; /* Espaciado interno */
+    border-radius: 1rem; /* Bordes redondeados del contenedor */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra de contenedor */
+}

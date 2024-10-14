@@ -1,0 +1,85 @@
+<ion-content>
+  <div class="bg">
+    <div style="display:flex;justify-content: center;">
+      <img src="../../../assets/imagenes/ConversandoAula.png" style="max-width: 70%; margin-top: 10%;">
+    </div>
+    <form [formGroup]="loginForm" class="mt-4">      
+        
+          <div class="">
+            <input type="radio" name="tab" id="signin" checked>
+            <input type="radio" name="tab" id="register">
+            <div class="pages py-2">
+              <ion-fab slot="fixed" vertical="top" horizontal="end" color="danger">
+                <ion-fab-button color="danger">
+                  <ion-icon name="people"></ion-icon>
+                </ion-fab-button>     
+          
+                <ion-fab-list side="start">
+                  <ion-fab-button color="danger" (click)="completarCampos(1)">
+                    <ion-icon name="people" id="metre"></ion-icon>
+                  </ion-fab-button>
+                  <ion-fab-button color="danger" (click)="completarCampos(2)">
+                    <ion-icon name="people" id="mozo"></ion-icon>
+                  </ion-fab-button>
+                  <ion-fab-button color="danger" (click)="completarCampos(3)">
+                    <ion-icon name="people" id="cocinero"></ion-icon>
+                  </ion-fab-button>        
+                </ion-fab-list>
+              </ion-fab>
+              <div class="page">
+                <div class="input">
+                  <div class="title" style="font-size: 1.rem;"><ion-icon name="people"></ion-icon> CORREO ELECTRÓNICO</div>
+                  <input type="text" placeholder="Correo electrónico"  formControlName="email" style="width: 100%; height: 25px;">
+                </div>
+                <div class="input">
+                  <div class="title" style="font-size: 1.rem;"><ion-icon name="lock-closed"></ion-icon> CONTRASEÑA</div>
+                  <input type="password" placeholder="" formControlName="password" style="width: 100%; height: 25px;">
+                </div>
+                <div class="input">
+                  <ion-button size="large" type="submit"  (click)="this.login(loginForm)" expand="block"
+                  [disabled]="loginForm.invalid">Ingresar</ion-button>              
+                </div>
+              </div>            
+            </div>            
+          </div>
+        
+      <!-- <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <div text-center>
+              <p class="display-6">Iniciar sesión</p>
+            </div>
+            <div padding>
+              <ion-item>
+                <ion-input type="mail" label="Correo" formControlName="email"></ion-input>
+                <ng-container *ngIf="mail?.hasError('email')">
+                  <small class="text-danger">Fomato inválido</small>
+                </ng-container>
+              </ion-item>
+              <ion-item>
+                <ion-input type="password" label="Clave" formControlName="password"></ion-input>
+                <ng-container *ngIf="password?.hasError('minlength')">
+                  <small class="text-danger">La clave debe tener mínimo
+                    {{password?.getError('minlength').requiredLength}} caracteres</small>
+                </ng-container>
+              </ion-item>
+            </div>
+            <div padding>
+              <ion-button size="large" type="submit" color="primary" (click)="this.login(loginForm)" expand="block"
+                [disabled]="loginForm.invalid">Ingresar</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid> -->
+    </form>
+    <hr>
+    <div class="fixed-bottom">
+    <h1 class="text-secondary text-center"> ¿No estás registrado? </h1>
+    <ion-button color="warning" expand="block"  style="height: 75px;" (click)="goToRegistro()">Registro</ion-button>
+  </div>
+
+    
+
+
+  </div>
+</ion-content>

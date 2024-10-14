@@ -1,0 +1,22 @@
+<div class="chat-area-container">
+    <div class="chat-messages" #scrollMe>
+        <ng-container *ngFor="let message of messages">
+            <div class="bubble" *ngIf="message.message.length > 0" 
+                [ngClass]="{
+                    'leftA': getLeftRight(message.nameFrom, 'left') && class === 'a',
+                    'leftB': getLeftRight(message.nameFrom, 'left') && class === 'b',
+                    'rightB': getLeftRight(message.nameFrom, 'right') && class === 'b',
+                    'rightA': getLeftRight(message.nameFrom, 'right') && class === 'a'
+                }">
+                <div class="d-flex flex-column">
+                    <span class="name" *ngIf="currentUser !== message.nameFrom">{{ message.nameFrom }}</span>
+                    {{ message.message }}
+                </div>
+                <span>{{ message.date | chatDate }}</span>
+            </div>
+        </ng-container>
+    </div>
+    <ion-footer>
+        <app-chat-box (onSendMessage)="onSendMessage($event)"></app-chat-box>
+    </ion-footer>
+</div>

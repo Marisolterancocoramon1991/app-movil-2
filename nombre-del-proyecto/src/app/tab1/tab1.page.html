@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login y Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size="12" size-md="6">
+
+        <!-- Formulario de Login -->
+        <form [formGroup]="formReg" *ngIf="showLoginForm" (ngSubmit)="loginUsuario()">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password" required></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit">Login</ion-button>
+          <ion-button expand="full" color="secondary" (click)="toggleForm()">Registrarse</ion-button>
+          <ion-button expand="full" color="tertiary" (click)="completeField()">Ingreso Rápido</ion-button>
+        </form>
+
+        <!-- Formulario de Registro -->
+        <form [formGroup]="formReg" *ngIf="!showLoginForm" (ngSubmit)="registroUsuario()">
+          <ion-item>
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input type="email" formControlName="email" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password" required></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit">Finalizar Registro</ion-button>
+          <ion-button expand="full" color="secondary" (click)="toggleForm()">Volver a Login</ion-button>
+        </form>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

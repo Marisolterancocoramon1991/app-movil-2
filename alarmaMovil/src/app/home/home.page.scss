@@ -1,0 +1,21 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.alarmBtn {
+  width: 100%;
+  height: 100%; /* O ajusta la altura deseada */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Puedes añadir más estilos según sea necesario */
+}
+
+.logo {
+  max-width: 80%; /* Ajusta el tamaño de la imagen según tus necesidades */
+  max-height: 80%;
+}

@@ -1,0 +1,38 @@
+.bg {
+    background-color: #ffcc00; /* Fondo amarillo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-template-rows: repeat(3, 1fr); /* Tres filas */
+    gap: 15px; /* Espaciado entre los botones */
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnAnimales {
+    background-color: #6a5acd; /* Fondo morado */
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ancho al 100% del contenedor */
+    height: 100%; /* Alto al 100% del contenedor */
+}
+
+.btnAnimales:hover {
+    transform: scale(1.05); /* Efecto hover de agrandamiento */
+}
+
+.btnAnimales img {
+    max-width: 80%; /* Imagen ocupa el 80% del ancho del botón */
+    max-height: 80%; /* Imagen ocupa el 80% del alto del botón */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra en las imágenes */
+}

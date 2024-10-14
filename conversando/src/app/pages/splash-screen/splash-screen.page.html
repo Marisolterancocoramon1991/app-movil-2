@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true">
+  <!-- Primera vista: Fondo estático -->
+  <div class="container" id="splash-container" *ngIf="!showAnimation">
+    <img src="../../../assets/imagenes/bg.png" alt="Splash Logo" class="splash-bg">
+  </div>
+
+  <!-- Segunda vista: Logo animado y nombres -->
+  <div class="container ion-text-center" *ngIf="showAnimation">
+    <img src="../../../assets/imagenes/ConversandoAula.png" alt="Logo" class="logo-animation">
+  </div>
+
+  <!-- Animación de nombres -->
+  <ng-container *ngIf="showAnimation">
+    <div class="ion-text-center" *ngFor="let name of listNames">
+      <h2 class="name animation text-light">{{ name }}</h2>
+    </div>
+  </ng-container>
+</ion-content>
+

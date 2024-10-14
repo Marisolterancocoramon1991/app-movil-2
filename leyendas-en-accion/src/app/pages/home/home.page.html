@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <div class="button-container center">    
+    <button expand="full" class="quarter-button dc" color="primary" (click)="franquiciaSeleccionada('dc')">
+      <div class="d-flex flex-column align-items-center">
+        <img src="../../../assets/DC_Comics_logo.svg.png" style="height: 50%; width: 50%;">
+        
+      </div>
+    </button>
+    <button expand="full" class="quarter-button marvel" color="danger" (click)="franquiciaSeleccionada('marvel')">
+      <div class="d-flex flex-column align-items-center">
+        <img src="../../../assets/Marvel_Logo.svg.png">
+        <!-- <div class="text-container2 text-wrap">MARVEL</div> -->
+      </div>
+    </button>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="irAScores()">
+    <ion-fab-button color="success">
+      <ion-icon name="stats-chart" size="large">
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+

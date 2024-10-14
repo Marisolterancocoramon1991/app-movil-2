@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+  <div class="bg" style="padding-bottom: 4rem; padding-left: 0.5rem; padding-right: 0.5rem;">
+    <div class="button-container center mx-3">
+      <ion-button (click)="deleteCredito()" expand="full" class="d-flex flex-column justify-items-center" id="delete-credits"
+      color="danger">
+      
+      Limpiar créditos
+      </ion-button>
+      <ion-button expand="full" class="quarter-button" color="success">
+        <div class="card-body">
+          <p class="text-center" style="font-size: 3rem;">Créditos</p>
+          <p class="text-center text-warning" style="font-size: 8rem">{{creditos}} </p>
+          <br>
+        </div>
+      </ion-button>
+      <ion-button (click)="scan()" expand="full" class="quarter-button d-flex flex-column justify-items-center"
+        color="primary">
+        <div class="card-body">
+          <ion-icon name="scan" size="large"></ion-icon>
+          <p class="text-center" style="font-size: 2rem;">Escanear</p>           
+          <p class="text-center" style="font-size: 2rem;">QR</p> 
+        </div>        
+      </ion-button>
+      <!-- <ion-button id="delete-credits" expand="full" class="quarter-button btn btn-danger fixed-top m-2" style="height: 3rem;">
+        <ion-icon name="remove-circle-outline" size="large"></ion-icon>
+        <h1>Hola</h1>
+      </ion-button>     -->
+      <ion-button (click)="logaut()" expand="full" class="d-flex flex-column justify-items-center" id="delete-credits"
+      color="danger">     
+      salir
+      </ion-button>
+    </div>
+   
+  </div> 
+  <div class="custom-toaster">
+    <ion-toast trigger="delete-credits" message="¿Está seguro que desea eliminar todos sus créditos?"
+      cssClass='toast-custom-class' [duration]="0" [buttons]="toastButtons" icon="alert-circle-outline" color="danger"
+      position="bottom"></ion-toast>
+  </div>
+  
+</ion-content>
+
+<!-- lista de codigos escaneados -->
+<!-- <ion-list>
+  <ion-item *ngFor="let barcode of barcodes">
+    <ion-label position="stacked">{{ barcode.format }}</ion-label>
+    <ion-input type="text" [value]="barcode.rawValue"></ion-input>
+  </ion-item>
+</ion-list> -->

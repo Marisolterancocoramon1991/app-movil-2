@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true">
+  <div class="container" id="splash-container" *ngIf="!showAnimation">
+    <img src="../../../assets/images/cargaCreditoSP.png" alt="Splash Logo">
+  </div>
+
+  <div class="container ion-text-center" *ngIf="showAnimation">
+    <img src="../../../assets/images/cargaCredito.png" alt="Logo">
+  </div>
+
+  <ng-container *ngIf="showAnimation">
+    <div class="ion-text-center" *ngFor="let name of listNames">
+      <h2 class="name animation text-light">{{ name }}</h2>
+    </div>
+  </ng-container>
+</ion-content>

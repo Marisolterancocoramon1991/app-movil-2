@@ -1,0 +1,168 @@
+/* Animación de cambio de color del fondo */
+@keyframes backgroundColorChange {
+    0% {
+        background-color: #3498db; /* Azul */
+    }
+    25% {
+        background-color: #9b59b6; /* Púrpura */
+    }
+    50% {
+        background-color: #e74c3c; /* Rojo */
+    }
+    75% {
+        background-color: #f1c40f; /* Amarillo */
+    }
+    100% {
+        background-color: #2ecc71; /* Verde */
+    }
+}
+
+/* Animación de las burbujas subiendo */
+@keyframes bubbleRise {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Fondo con cambio de color */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: backgroundColorChange 8s infinite alternate;
+    z-index: -1;
+}
+
+/* Contenedor de las burbujas */
+.bubbles {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Estilos de las burbujas */
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    opacity: 0;
+    animation: bubbleRise 5s infinite;
+}
+
+/* Genera burbujas de diferentes tamaños y posiciones */
+.bubble:nth-child(1) {
+    left: 10%;
+    width: 40px;
+    height: 40px;
+    animation-duration: 7s;
+}
+
+.bubble:nth-child(2) {
+    left: 25%;
+    width: 20px;
+    height: 20px;
+    animation-duration: 5s;
+}
+
+.bubble:nth-child(3) {
+    left: 40%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 6s;
+}
+
+.bubble:nth-child(4) {
+    left: 60%;
+    width: 25px;
+    height: 25px;
+    animation-duration: 4s;
+}
+
+.bubble:nth-child(5) {
+    left: 80%;
+    width: 35px;
+    height: 35px;
+    animation-duration: 6s;
+}
+
+/* Estilos del contenedor del logo estático */
+#splash-container {
+    position: absolute; /* Asegura que ocupe toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease; /* Transición para el desvanecimiento */
+}
+
+/* Estilos de la imagen estática */
+#splash-container img {
+    height: 100vh; /* Ocupa toda la pantalla */
+    width: auto;   /* Mantiene la proporción */
+}
+
+/* Estilos del contenedor del logo dinámico */
+#dynamic-logo-container {
+    display: none; /* Oculto al principio */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilos del logo dinámico */
+#dynamic-logo-container img {
+    height: 150px; /* Tamaño más pequeño para el logo dinámico */
+    animation: bounce-spin 2s infinite;
+}
+
+/* Animación del logo saltando y girando */
+@keyframes bounce-spin {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-150px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(0) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-75px) rotate(270deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+/* Clase para el efecto de desvanecimiento */
+.fade-out {
+    opacity: 0; /* Cambia la opacidad a 0 para desvanecer */
+}
