@@ -36,3 +36,21 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra en las imágenes */
 }
+/* Estilos para dispositivos en modo horizontal */
+@media (orientation: landscape) {
+    .bg {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+        grid-template-rows: repeat(2, 1fr); /* Dos filas */
+        gap: 10px; /* Espaciado más pequeño en modo horizontal */
+    }
+
+    .btnAnimales {
+        padding: 5px; /* Botones más pequeños en modo horizontal */
+        border-radius: 10px;
+    }
+
+    .btnAnimales img {
+        max-width: 70%; /* Ajuste de la imagen */
+        max-height: 70%;
+    }
+}

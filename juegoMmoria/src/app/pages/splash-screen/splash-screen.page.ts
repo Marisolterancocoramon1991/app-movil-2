@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./splash-screen.page.scss'],
 })
 export class SplashScreenPage implements OnInit {
-
+  
+  name = "Kervin Briceño";
+  division = "4A";
+  
   constructor() { }
 
   ngOnInit() {
@@ -15,43 +18,50 @@ export class SplashScreenPage implements OnInit {
       // Oculta el splash estático
       const splashContainer = document.getElementById('splash-container');
       if (splashContainer) {
-        splashContainer.style.display = 'none';
-      }
+        splashContainer.style.transition = 'opacity 1s ease'; // Transición suave
+        splashContainer.style.opacity = '0'; // Desvanece el contenedor del splash
 
-      // Muestra el logo dinámico
-      const dynamicLogoContainer = document.getElementById('dynamic-logo-container');
-      if (dynamicLogoContainer) {
-        dynamicLogoContainer.style.display = 'flex';
-      }
-
-      // Mueve el logo de izquierda a derecha
-      const dynamicLogo = document.getElementById('dynamic-logo');
-      if (dynamicLogo) {
-        dynamicLogo.style.position = 'absolute';
-        dynamicLogo.style.left = '-100%'; // Comienza fuera de la pantalla a la izquierda
-
-        // Animación de movimiento
+        // Una vez que el splash está oculto, muestra el logo dinámico
         setTimeout(() => {
-          dynamicLogo.style.transition = 'left 2s ease'; // Transición de movimiento
-          dynamicLogo.style.left = '50%'; // Mueve al centro
-          dynamicLogo.style.transform = 'translateX(-50%)'; // Centra el logo
+          splashContainer.style.display = 'none'; // Asegura que no ocupe espacio
+          
+          // Muestra el logo dinámico
+          const dynamicLogoContainer = document.getElementById('dynamic-logo-container');
+          if (dynamicLogoContainer) {
+            dynamicLogoContainer.style.display = 'flex';
+            dynamicLogoContainer.style.opacity = '0'; // Inicialmente oculto
+            dynamicLogoContainer.style.transition = 'opacity 1s ease'; // Transición suave
 
-          // Agranda el logo
-          setTimeout(() => {
-            dynamicLogo.style.transition = 'transform 1s ease';
-            dynamicLogo.style.transform = 'translate(-50%, -50%) scale(5)'; // Agranda el logo
-
-            // Redirige a la ruta de inicio después de 1 segundo
+            // Desvanece el logo dinámico
             setTimeout(() => {
-              window.location.href = '/login'; // Redirige a la página de inicio
-            }, 1000);
+              dynamicLogoContainer.style.opacity = '1'; // Muestra el logo dinámico
 
-          }, 2000); // Tiempo para que el logo esté en el centro antes de agrandar
+              // Anima el nombre y la división
+              const nameElement = document.getElementById('name');
+              const divisionElement = document.getElementById('division');
+              if (nameElement && divisionElement) {
+                setTimeout(() => {
+                  nameElement.style.opacity = '1';
+                  nameElement.style.transform = 'translateY(0)';
+                  divisionElement.style.opacity = '1';
+                  divisionElement.style.transform = 'translateY(0)';
+                }, 500); // Espera medio segundo antes de mostrar los textos
 
-        }, 0); // Tiempo para iniciar la animación de movimiento
+                // Redirige a la ruta de inicio después de 4 segundos
+                setTimeout(() => {
+                  // Desvanece todo antes de redirigir
+                  dynamicLogoContainer.style.opacity = '0'; // Desvanece el logo y textos
+                  setTimeout(() => {
+                    window.location.href = '/login'; // Redirige a la página de inicio
+                  }, 1000); // Espera un segundo para que el desvanecimiento sea visible
+                }, 4000); // Espera 4 segundos antes de redirigir
+
+              }
+            }, 500); // Espera medio segundo para mostrar el logo dinámico
+          }
+        }, 1000); // Espera 1 segundo antes de mostrar el logo dinámico
       }
 
     }, 3000); // Muestra el splash estático por 3 segundos
   }
 }
-

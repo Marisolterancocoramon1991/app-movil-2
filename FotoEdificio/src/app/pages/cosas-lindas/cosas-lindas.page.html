@@ -8,7 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Cosas lindas</ion-title>
@@ -26,24 +25,24 @@
       <ion-list *ngFor="let cosa of cosas" class="list">
         <div class="row border-bottom border-1 border-light">
           <div class="fecha text-center">
-            <h1>{{mostrarFecha(cosa.fecha)}} - {{cosa.email}}</h1>
+            <h1>{{ mostrarFecha(cosa.fecha) }} - {{ cosa.email }}</h1>
           </div>
-          <div style="max-height: 15rem; overflow: scroll;" class="d-flex justify-content-center mb-2">
-            <img alt="{{cosa.cosa}}" src="{{cosa.base64}}" />
+          <div class="d-flex justify-content-center mb-2" style="max-height: 15rem; overflow: hidden;">
+            <img alt="{{ cosa.cosa }}" src="{{ cosa.base64 }}" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
           </div>
           <div class="row py-2 m-0" style="background-color: black;">
             <div class="d-flex justify-content-around align-items-center">
-              <div class="d-flex flex-column ">
-                <ion-icon [name]="getVotoTipo(cosa,'up') ? 'thumbs-up' : 'thumbs-up-outline'" color="success"
+              <div class="d-flex flex-column">
+                <ion-icon [name]="getVotoTipo(cosa, 'up') ? 'thumbs-up' : 'thumbs-up-outline'" color="success"
                   size="large" (click)="votoArriba(cosa)"></ion-icon>
-                <ion-label [ariaSetSize]="10">{{getCantidadVotos(cosa,'up')}}</ion-label>
+                <ion-label [ariaSetSize]="10">{{ getCantidadVotos(cosa, 'up') }}</ion-label>
               </div>
               <div class="d-flex flex-column">
-                <ion-icon [name]="getVotoTipo(cosa,'down') ? 'thumbs-down' : 'thumbs-down-outline'" color="danger"
+                <ion-icon [name]="getVotoTipo(cosa, 'down') ? 'thumbs-down' : 'thumbs-down-outline'" color="danger"
                   size="large" (click)="votoAbajo(cosa)"></ion-icon>
-                <ion-label>{{getCantidadVotos(cosa,'down')}}</ion-label>
+                <ion-label>{{ getCantidadVotos(cosa, 'down') }}</ion-label>
               </div>
-            </div>            
+            </div>
           </div>
         </div>
       </ion-list>
@@ -63,47 +62,47 @@
     </ng-template>
   </ion-modal>
 
-  
   <ion-fab slot="fixed" vertical="bottom" horizontal="start">
     <ion-fab-button color="success" (click)="capturarFoto()" size="large">
-      <ion-icon name="camera-sharp" size="large">
-      </ion-icon>
+      <ion-icon name="camera-sharp" size="large"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button id="open-modal"  color="success">
-      <ion-icon name="pie-chart" size="large">
-      </ion-icon>
+    <ion-fab-button (click)="irTorta()" color="success">
+      <ion-icon name="pie-chart" size="large"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
 
 <div style="display:none" *ngFor="let foto of fotosUp">
-  <img #elementRef [src]="foto" alt="foto" (load)="loadImg(elementRef,$event)">
+  <img #elementRef [src]="foto" alt="foto" (load)="loadImg(elementRef, $event)">
 </div>
-
 
 <ion-modal #addPhotosModal>
   <ng-template>
     <ion-content>
       <ion-toolbar>
-        <ion-title>Carga de fotos</ion-title>       
+        <ion-title>Carga de fotos</ion-title>
       </ion-toolbar>
 
-      <ion-button expand="full" fixed="top" color="warning" (click)="capturarFoto()" style="font-size: 1.2em; height: 2.5rem"><ion-icon name="add"></ion-icon> Agregar foto</ion-button>
+      <ion-button expand="full" fixed="top" color="warning" (click)="capturarFoto()" style="font-size: 1.2em; height: 2.5rem">
+        <ion-icon name="add"></ion-icon> Agregar foto
+      </ion-button>
       <ion-list class="fotosTransparente mb-5" style="background: transparent;" lines="none">
         <ion-item *ngFor="let foto of this.fotosUploadFinish" class="fotosTransparente mb-3">
           <div class="d-flex justify-content-center">
-            <img #imagen [src]="foto.base64" alt="foto">
+            <img #imagen [src]="foto.base64" alt="foto" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
           </div>
           <ion-fab vertical="top" horizontal="end" class="pe-1" size="small">
-            <ion-fab-button size="small" color="danger" class="mt-0" (click)="delFoto(foto)" size="small">
+            <ion-fab-button size="small" color="danger" class="mt-0" (click)="delFoto(foto)">
               <ion-icon name="close-outline"></ion-icon>
             </ion-fab-button>
           </ion-fab>
         </ion-item>
       </ion-list>
-      <ion-button expand="full" class="fixed-bottom" color="success" (click)="subirFotos()" style="font-size: 1.2em; height: 3.5rem;"><ion-icon name="cloud-upload"></ion-icon> Subir fotos</ion-button>
+      <ion-button expand="full" class="fixed-bottom" color="success" (click)="subirFotos()" style="font-size: 1.2em; height: 3.5rem;">
+        <ion-icon name="cloud-upload"></ion-icon> Subir fotos
+      </ion-button>
       <div class="d-flex justify-content-center">
         <img>
       </div>

@@ -8,7 +8,7 @@ import { TipoCosa } from 'src/app/enums/tipoCosa';
 import { AuthFirebaseService } from 'src/app/services/auth-firebase.service';
 import { FotosService } from 'src/app/services/fotos.service';
 import { InterceptorService } from 'src/app/services/interceptor.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cosas-feas',
   templateUrl: './cosas-feas.page.html',
@@ -23,7 +23,9 @@ export class CosasFeasPage implements OnInit, OnDestroy {
   fotosUp: SafeUrl[] = []
   fotosUploadFinish: Foto[] = []
 
-  constructor(private fotosService: FotosService, private sanitizer: DomSanitizer, private auth: AuthFirebaseService, private interceptor: InterceptorService) { }
+  constructor(private fotosService: FotosService, private sanitizer: DomSanitizer, 
+    private auth: AuthFirebaseService, private interceptor: InterceptorService,
+  private Router: Router) { }
   ngOnDestroy(): void {
     this.cosasSub?.unsubscribe();
   }
@@ -133,6 +135,9 @@ export class CosasFeasPage implements OnInit, OnDestroy {
 
   delFoto(foto:Foto) {
     this.fotosUploadFinish = this.fotosUploadFinish.filter(f => f != foto)
+  }
+  irBarra(){
+    this.Router.navigate(['/barra']);
   }
 
 }

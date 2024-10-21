@@ -1,68 +1,92 @@
 /* Fondo de la pantalla completa */
 .background {
-    background-color: #fc0404;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+  background-color: #fc0404;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* Ajuste del contenedor del logo estático para ocupar toda la pantalla */
+#splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Logo estático */
+#static-logo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Asegura que la imagen ocupe toda la pantalla */
+  animation: fade-in 1.5s forwards; /* Aparece suavemente */
+}
+
+/* Animación de desvanecimiento */
+.fade-out {
+  animation: fade-out 1.5s forwards; /* Añade una animación de desvanecimiento */
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
   }
-  
-  /* Ajuste del contenedor del logo estático para ocupar toda la pantalla */
-  #splash-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
+  100% {
+    opacity: 0;
   }
-  
-  #static-logo {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover; /* Asegura que la imagen ocupe toda la pantalla */
-    animation: fade-in 1.5s forwards; /* Aparece suavemente */
+}
+
+/* Animación circular para el logo dinámico */
+@keyframes move-in-circle {
+  0% {
+    transform: translateX(200vw) translateY(-200vh) scale(0.5); /* Empieza fuera de pantalla */
   }
-  
-  /* Animación circular para el logo dinámico */
-  @keyframes move-in-circle {
-    0% {
-      transform: translateX(200vw) translateY(-200vh) scale(0.5); /* Empieza fuera de pantalla */
-    }
-    50% {
-      transform: translateX(-20vw) translateY(30vh) scale(0.75); /* Movimiento circular */
-    }
-    100% {
-      transform: translateX(0) translateY(0) scale(1); /* Llega al centro */
-    }
+  50% {
+    transform: translateX(-20vw) translateY(30vh) scale(0.75); /* Movimiento circular */
   }
-  
-  /* Rotación y crecimiento */
-  @keyframes rotate-grow {
-    0% {
-      transform: rotate(0deg) scale(1);
-    }
-    100% {
-      transform: rotate(720deg) scale(1.5); /* Gira dos vueltas completas y crece */
-    }
+  100% {
+    transform: translateX(0) translateY(0) scale(1); /* Llega al centro */
   }
-  
-  /* Estilo para el logo dinámico */
-  #dynamic-logo {
-    height: 150px;
-    animation: move-in-circle 3s ease-out forwards; /* Movimiento inicial circular */
+}
+
+/* Estilo para el logo dinámico */
+#dynamic-logo {
+  height: 250px; /* Aumenta el tamaño del logo dinámico */
+  animation: move-in-circle 3s ease-out forwards; /* Movimiento inicial circular */
+}
+
+/* Nombre y División */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Transiciones suaves */
+  position: absolute; /* Para centrar el texto sobre el logo */
+  text-align: center; /* Centrar el texto */
+}
+
+/* Estilos para el nombre */
+#name {
+  font-size: 3rem; /* Aumenta el tamaño del texto */
+  color: white; /* Color del texto */
+  top: 10%; /* Ajusta la posición vertical para que esté en la parte superior del logo */
+  opacity: 0; /* Comienza oculto */
+}
+
+/* Estilos para la división */
+#division {
+  font-size: 2rem; /* Aumenta el tamaño del texto */
+  color: white; /* Color del texto */
+  bottom: 10%; /* Ajusta la posición vertical para que esté debajo del logo */
+  opacity: 0; /* Comienza oculto */
+}
+
+/* Animación de fade-in para suavizar la transición */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
-  
-  .grow-rotate {
-    animation: rotate-grow 2s ease-out forwards; /* Gira y crece */
+  100% {
+    opacity: 1;
   }
-  
-  /* Animación de fade-in para suavizar la transición */
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
+}

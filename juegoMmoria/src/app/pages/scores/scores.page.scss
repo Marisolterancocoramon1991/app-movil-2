@@ -85,3 +85,22 @@ ion-header {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+.custom-tab-bar {
+  --background: black; /* Fondo negro para la barra */
+  height: 80px; /* Aumenta la altura total de la barra */
+}
+
+.custom-tab-bar ion-tab-button {
+  --color: white; /* Texto blanco */
+  --color-selected: yellow; /* Texto amarillo cuando se selecciona */
+  --background: black; /* Fondo negro para los botones */
+  --background-selected: darkgray; /* Fondo cuando está seleccionado */
+  
+  font-size: 1.2rem; /* Aumenta el tamaño del texto */
+  padding: 20px 10px; /* Aumenta el padding para darle más altura */
+}
+
+.custom-tab-bar ion-icon {
+  font-size: 24px; /* Aumenta el tamaño de los íconos */
+  margin-bottom: 5px; /* Ajusta el margen para el ícono */
+}

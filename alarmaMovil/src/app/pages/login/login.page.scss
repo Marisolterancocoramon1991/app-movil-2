@@ -1,13 +1,39 @@
 .bg {
-    background-image: url('../../../assets/images/bg.png');
-    // background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: 100% 100%; /* Resize the background image to cover the entire container */
-    background-color: #cccccc;
-    height: 100%;
-    width: 100%;
-  }
-  
-  ion-fab {
-    margin-bottom: var(--ion-safe-area-bottom, 5rem);
-  }
+  background-image: url('../../../assets/images/bg.png');
+  background-repeat: no-repeat; 
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-color: #4B0082; /* Color de fondo morado */
+  height: 100vh; /* Usa 100vh para que cubra toda la altura de la pantalla */
+  width: 100vw; /* Usa 100vw para que cubra todo el ancho de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+}
+
+ion-button {
+  --background: #32CD32; /* Color de fondo verde para el botón */
+  --color: white; /* Color de texto blanco */
+  --border-radius: 25px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.text-danger {
+  color: #FF4500; /* Color rojo para los mensajes de error */
+}
+
+h4 {
+  color: #FFD700; /* Color amarillo claro para el texto secundario */
+}
+
+.img-alarm {
+  max-width: 50%; /* Aumenta el tamaño de la imagen */
+  margin-top: 10%;
+}
+.display-6 {
+  font-size: 2rem; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Negrita */
+  color: #FFD700; /* Color amarillo dorado para un buen contraste */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra de texto para mayor legibilidad */
+  margin-bottom: 20px; /* Espaciado inferior */
+}

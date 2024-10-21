@@ -24,7 +24,7 @@ export class SplashScreenPage implements OnInit {
     // Redirigir al login después de que todas las animaciones hayan terminado (por ejemplo, 6 segundos)
     setTimeout(() => {
       this.router.navigateByUrl('login');
-    }, 6000); // Duración total de las animaciones
+    }, 8000); // Duración total de las animaciones
   }
 
   showNames() {

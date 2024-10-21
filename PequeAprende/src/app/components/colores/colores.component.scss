@@ -1,5 +1,5 @@
 .bg {
-    background-color: #ffcc00; /* Color de fondo amarillo */
+    background-color: #c0a22c; /* Color de fondo amarillo */
     position: absolute;
     top: 0;
     left: 0;
@@ -8,16 +8,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Cambia a columna para ocupar toda la pantalla */
+}
+
+.row {
+    width: 100%; /* Asegura que la fila ocupe el 100% del ancho */
+    display: flex; /* Utiliza flexbox para distribuir los botones */
+    flex-wrap: wrap; /* Permite que los botones se distribuyan en múltiples líneas */
+    justify-content: center; /* Centra los botones horizontalmente */
 }
 
 .btnAnimales {
     border-radius: 15px; /* Bordes redondeados */
-    padding: 20px; /* Espaciado interno */
-    margin: 10px; /* Espaciado entre botones */
+    padding: 30px; /* Aumenta el espaciado interno */
+    margin: 15px; /* Aumenta el espaciado entre botones */
     transition: transform 0.2s; /* Efecto de transición al hacer hover */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 150px; /* Fija un ancho para los botones */
+    height: 150px; /* Fija una altura para los botones */
 }
 
 .btnAnimales:hover {
@@ -29,7 +39,7 @@
 }
 
 .btnAnimales.rojo {
-    background-color: #FF6347; /* Rojo tomate */
+    background-color: #ef2400; /* Rojo tomate */
 }
 
 .btnAnimales.verde {
@@ -49,16 +59,23 @@
 }
 
 .btnAnimales.naranja {
-    background-color: #FFA500; /* Naranja */
+    background-color: #ff6a00; /* Naranja */
 }
 
 .btnAnimales.rosa {
     background-color: #FF69B4; /* Rosa intenso */
 }
 
+/* Estilos específicos para pantalla en horizontal */
+
 @media (max-width: 768px) {
+    .row {
+        flex-direction: row; /* Mantiene la fila horizontalmente */
+        justify-content: space-around; /* Distribuye el espacio entre los botones */
+    }
+
     .btnAnimales {
-        width: 80%; /* Botones ocupan 80% en pantallas pequeñas */
-        height: 60px; /* Altura fija para los botones en móviles */
+        width: 20%; /* Ajusta el ancho de los botones para ocupar menos espacio */
+        height: 80px; /* Altura fija para los botones en móviles */
     }
 }

@@ -7,7 +7,20 @@
   height: 100%;
   width: 100%;
 }
-  
+
 ion-fab {
   margin-bottom: var(--ion-safe-area-bottom, 5rem);
+}
+
+ion-item {
+  --background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para más visibilidad */
+  --border-radius: 8px; /* Bordes redondeados */
+}
+
+h4 {
+  margin-bottom: 10px; /* Espacio inferior para separar de otros elementos */
+}
+
+ion-button {
+  --border-radius: 50px; /* Aumenta el redondeo del borde */
 }

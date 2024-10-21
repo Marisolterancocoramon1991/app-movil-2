@@ -6,6 +6,9 @@ import { Foto } from 'src/app/classes/user/foto';
 import { TipoCosa } from 'src/app/enums/tipoCosa';
 import { AuthFirebaseService } from 'src/app/services/auth-firebase.service';
 import { FotosService } from 'src/app/services/fotos.service';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-g-barra',
   templateUrl: './g-barra.component.html',
@@ -17,7 +20,9 @@ export class GBarraComponent  implements OnInit {
   @ViewChild('openModalButton', { read: ElementRef }) openModalButton!: ElementRef;
   @ViewChild('modal') modal!: IonModal;
 
-  constructor(private fotosService: FotosService,private auth:AuthFirebaseService) { }
+  constructor(private fotosService: FotosService,private auth:AuthFirebaseService, 
+    private router: Router
+  ) { }
 
   public chart: any;
   fotos: Foto[] = [];
@@ -142,5 +147,7 @@ export class GBarraComponent  implements OnInit {
   getCantidadVotos(foto: Foto,tipo:'up'|'down') {
     return foto.votos.filter(voto => voto.tipo == tipo).length  
   }
-
+  devolver() {
+    this.router.navigate(['/cosas-lindas']);
+  }
 }

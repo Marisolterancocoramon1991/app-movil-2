@@ -66,8 +66,8 @@ export class LoginPage implements OnInit {
 
   goToHomeCliente() {
     this.router.navigateByUrl("/home/cliente");
-  }
-
+  } 
+  
   completarCampos(id: number) {
     switch (id) {
       case 1:
@@ -80,7 +80,7 @@ export class LoginPage implements OnInit {
         this.loginForm.controls['email'].setValue('invitado@invitado.com');
         this.loginForm.controls['password'].setValue('222222');
         break;
-      case 3:
+      case 3: 
         this.error = '';
         this.loginForm.controls['email'].setValue('usuario@usuario.com');
         this.loginForm.controls['password'].setValue('333333');

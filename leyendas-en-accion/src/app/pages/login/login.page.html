@@ -1,15 +1,15 @@
 <ion-content>
   <div class="bg">
     <div style="display: flex; justify-content: center;">
-      <img src="../../../assets/images/icon.png" style="max-width: 50%; height: auto; margin-top: 10%;">
+      <img src="../../../assets/images/icon.png" style="max-width: 50%; height: auto; margin: 1px 0;">
     </div>
     
-    <form [formGroup]="loginForm" style="margin: 20px;">
+    <form [formGroup]="loginForm" style="margin: 10px;">
       <ion-grid>
         <ion-row color="primary" justify-content-center>
-          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <ion-col align-self-center size-md="5" size-lg="4" size-xs="10">
             <div text-center>
-              <p class="display-6">Iniciar sesión</p>
+              <p class="display-6 text-gradient text-imponente">Iniciar sesión</p>
             </div>
             <div padding>
               <ion-item>
@@ -26,7 +26,7 @@
               </ion-item>
             </div>
             <div padding>
-              <ion-button size="large" type="submit" color="primary" (click)="this.login(loginForm)" expand="block" [disabled]="loginForm.invalid">
+              <ion-button size="large" type="submit" color="primary" (click)="this.login(loginForm)" expand="full" [disabled]="loginForm.invalid">
                 Ingresar
               </ion-button>
             </div>
@@ -37,38 +37,21 @@
     
     <hr>
     <h4 class="text-secondary text-center">¿No estás registrado?</h4>
-    <ion-button expand="block" class="tertiary" (click)="goToRegistro()">Registro</ion-button>
+    <ion-button expand="full" class="tertiary" (click)="goToRegistro()">Registro</ion-button>
 
-    <ion-fab slot="fixed" vertical="bottom" horizontal="start">
-      <ion-fab-button>
-        <ion-icon name="people"></ion-icon>
-      </ion-fab-button>
+    <!-- Nueva sección para botones flotantes -->
+    <div class="fab-buttons">
+      <ion-button expand="full" color="secondary" (click)="completarCampos(1)" class="fab-content">
+        <span class="fab-username">User1</span>
+      </ion-button>
 
-      <ion-fab-list side="end">
-        <ion-fab-button color="secondary" (click)="completarCampos(1)">
-          <div class="fab-content">
-            <span class="fab-username">User1</span>
-            
-          </div>
-        </ion-fab-button>
-      
-        <ion-fab-button color="secondary" (click)="completarCampos(2)">
-          <div class="fab-content">
-            <span class="fab-username">User2</span>
-    
-          </div>
-        </ion-fab-button>
-      
-        <ion-fab-button color="secondary" (click)="completarCampos(3)">
-          <div class="fab-content">
-            <span class="fab-username">User3</span>
-          </div>
-        </ion-fab-button>
-      </ion-fab-list>
-      
+      <ion-button expand="full" color="secondary" (click)="completarCampos(2)" class="fab-content">
+        <span class="fab-username">User2</span>
+      </ion-button>
 
-
-    </ion-fab>
+      <ion-button expand="full" color="secondary" (click)="completarCampos(3)" class="fab-content">
+        <span class="fab-username">User3</span>
+      </ion-button>
+    </div>
   </div>
 </ion-content>
-

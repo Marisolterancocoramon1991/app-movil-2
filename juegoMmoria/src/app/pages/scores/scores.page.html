@@ -42,20 +42,20 @@
 
 </ion-content>
 <ion-toolbar>
-<ion-tabs>
-  <ion-tab-bar slot="bottom" >
-    <ion-tab-button (click)="buscar('facil')">
-      <ion-icon name="happy"></ion-icon>
-      Facil
-    </ion-tab-button>
-    <ion-tab-button (click)="buscar('medio')" >
-      <ion-icon name="sad"></ion-icon>
-      Medio
-    </ion-tab-button>
-    <ion-tab-button (click)="buscar('dificil')">
-      <ion-icon name="skull"></ion-icon>
-      Dificil
-    </ion-tab-button>      
-  </ion-tab-bar>
-</ion-tabs>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" class="custom-tab-bar">
+      <ion-tab-button (click)="buscar('facil')">
+        <ion-icon name="happy"></ion-icon>
+        Facil
+      </ion-tab-button>
+      <ion-tab-button (click)="buscar('medio')">
+        <ion-icon name="sad"></ion-icon>
+        Medio
+      </ion-tab-button>
+      <ion-tab-button (click)="buscar('dificil')">
+        <ion-icon name="skull"></ion-icon>
+        Dificil
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-toolbar>

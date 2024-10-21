@@ -1,74 +1,122 @@
 /* Estilos base */
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-  }
-
-.container {
-    position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
 }
 
-#splash-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Altura del contenedor */
 }
 
 #dynamic-logo-container {
-    display: none; /* Ocultar inicialmente */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    animation: moveUp 1s ease-in-out forwards, vibrate 0.1s infinite alternate 3s; /* Movimiento y vibración */
-    transition: background-color 1s ease; /* Transición suave del fondo */
+  display: none; /* Ocultar inicialmente */
+  animation: moveUp 1s ease-in-out forwards, vibrate 0.1s infinite alternate 3s; /* Movimiento y vibración */
+  transition: background-color 1s ease; /* Transición suave del fondo */
 }
 
-
-
+/* Animación de movimiento hacia arriba */
 @keyframes moveUp {
-    from {
+  from {
       transform: translateY(100%); /* Comienza desde abajo */
-    }
-    to {
+  }
+  to {
       transform: translateY(0); /* Termina en el centro */
-    }
+  }
 }
 
+/* Animación de vibración */
 @keyframes vibrate {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Contenedor para el nombre */
+.name-container {
+  position: relative; /* Posición relativa para el nombre */
+  opacity: 0;
+  animation: fadeInName 2s forwards; /* Animación de opacidad */
+}
+
+/* Estilo para el nombre, grande y centrado */
+.animated-name {
+  font-size: 6rem; /* Tamaño grande para el nombre */
+  font-weight: bold; /* Negrilla */
+  color: black; /* Color negro */
+  text-align: center;
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Contenedor para la división */
+.division-container {
+  position: relative; /* Posición relativa para la división */
+  opacity: 0;
+  animation: fadeInDivision 2s forwards 2s; /* Animación de opacidad con retraso */
+}
+
+/* Estilo para la división, grande y centrado debajo del logo */
+.animated-division {
+  font-size: 4rem; /* Tamaño grande para la división */
+  font-weight: bold; /* Negrilla */
+  color: black; /* Color negro */
+  text-align: center;
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Animación de opacidad para el nombre */
+@keyframes fadeInName {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Animación de opacidad para la división */
+@keyframes fadeInDivision {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
 
 /* Estilos para las luces tipo alarma */
 .alarm-lights {
-    position: absolute;
-    top: 50%;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, red, transparent);
-    animation: pulse 1s infinite;
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, red, transparent);
+  animation: pulse 1s infinite;
 }
 
+/* Animación de pulso para las luces de alarma */
 @keyframes pulse {
-    0% {
+  0% {
       transform: scale(0.8);
       opacity: 1;
-    }
-    50% {
+  }
+  50% {
       transform: scale(1.2);
       opacity: 0.7;
-    }
-    100% {
+  }
+  100% {
       transform: scale(0.8);
       opacity: 1;
-    }
+  }
 }
-

@@ -1,15 +1,21 @@
 <ion-content [fullscreen]="true">
-  <div class="container" id="splash-container" *ngIf="!showAnimation">
-    <img src="../../../assets/images/cargaCreditoSP.png" alt="Splash Logo">
-  </div>
-
-  <div class="container ion-text-center" *ngIf="showAnimation">
-    <img src="../../../assets/images/cargaCredito.png" alt="Logo">
-  </div>
-
-  <ng-container *ngIf="showAnimation">
-    <div class="ion-text-center" *ngFor="let name of listNames">
-      <h2 class="name animation text-light">{{ name }}</h2>
+  <!-- Contenedor de Fondo Personalizado -->
+  <div class="background-container">
+    <!-- Splash Estático -->
+    <div class="container" id="splash-container" *ngIf="!showAnimation">
+      <img src="../../../assets/images/cargaCreditoSP.png" alt="Splash Logo">
     </div>
-  </ng-container>
+
+    <!-- Splash Dinámico con Nombre Animado -->
+    <div class="container ion-text-center" *ngIf="showAnimation">
+      <h2 class="name text-light animation">{{ 'Kervin Briceño' }}</h2>
+      <img src="../../../assets/images/cargaCredito.png" alt="Logo" class="animated-logo">
+      <div class="names-container">
+        <div class="ion-text-center">
+          
+          <h4 class="division text-light animation">División 4A</h4>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

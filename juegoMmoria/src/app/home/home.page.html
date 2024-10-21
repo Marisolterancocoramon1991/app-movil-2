@@ -14,26 +14,35 @@
   </ion-header>
 
   <div class="button-container">
+    <!-- Botón Fácil -->
     <ion-button expand="block" class="full-height-button" color="success" (click)="irAFacil()">
       <div class="d-flex flex-column align-items-center">
-        <div class="text-container2 text-wrap">Fácil</div>
-        <label class="text-container3">3 pares</label>
+        <img src="../../assets/icon/easyAnimals.png" style="width: 50px; height: 50px; margin-bottom: 10px;">
+        <div class="text-container2 text-wrap" style="font-size: 24px; font-weight: bold;">Fácil</div>
+        <label class="text-container3" style="font-size: 18px;">3 pares</label>
       </div>
     </ion-button>
+
+    <!-- Botón Medio -->
     <ion-button expand="block" class="full-height-button" color="warning" (click)="irAMedio()">
       <div class="d-flex flex-column align-items-center">
-        <div class="text-container2 text-wrap">Medio</div>
-        <label class="text-container3">5 pares</label>
+        <img src="../../assets/icon/machineMedio.png" style="width: 50px; height: 50px; margin-bottom: 10px;">
+        <div class="text-container2 text-wrap" style="font-size: 24px; font-weight: bold;">Medio</div>
+        <label class="text-container3" style="font-size: 18px;">5 pares</label>
       </div>
     </ion-button>
+
+    <!-- Botón Difícil -->
     <ion-button expand="block" class="full-height-button" color="danger" (click)="irADificil()">
       <div class="d-flex flex-column align-items-center">
-        <div class="text-container2 text-wrap">Difícil</div>
-        <label class="text-container3">8 pares</label>
+        <img src="../../assets/icon/fruitsHard.png" style="width: 50px; height: 50px; margin-bottom: 10px;">
+        <div class="text-container2 text-wrap" style="font-size: 24px; font-weight: bold;">Difícil</div>
+        <label class="text-container3" style="font-size: 18px;">8 pares</label>
       </div>
     </ion-button>
   </div>
 
+  <!-- Botón FAB para Scores -->
   <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="irAScores()">
     <ion-fab-button color="success">
       <ion-icon name="stats-chart" size="large"></ion-icon>

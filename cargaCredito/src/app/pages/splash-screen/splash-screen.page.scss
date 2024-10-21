@@ -1,65 +1,98 @@
-/* Splash Screen Styles */
+/* Contenedor de fondo para el splash */
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #87CEFA; /* Fondo azul claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease; /* Suave transición de color */
+}
+
+/* Transición difuminada entre splash estático y dinámico */
 #splash-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--custom-blue-dark); /* Color de fondo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
-    animation: fadeIn 2s forwards; /* Animación de entrada */
+  opacity: 1;
+  animation: fadeOut 5s forwards; /* Hace que el splash estático se desvanezca suavemente */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /* Comienza visible */
   }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0; /* Comienza invisible */
-    }
-    100% {
-      opacity: 1; /* Termina visible */
-    }
+  100% {
+    opacity: 0; /* Termina invisible */
   }
-  
-  /* Animaciones del nombre */
-  .name {
-    margin-top: 10%;
-    color: var(--white);
-    font-size: 10vw;
-    font-weight: bold;
-    font-family: 'Borel';
+}
+
+/* Estilos para los nombres */
+.name, .division {
+  font-weight: bold; /* Texto en negrilla */
+  font-size: 10vw; /* Tamaño del texto (editable) */
+  color: black; /* Color del texto (editable) */
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(20px); /* Comienza desplazado */
+  animation: slideIn 1s forwards ease-in-out; /* Suave entrada con desplazamiento */
+}
+
+.name {
+  font-size: 10vw; /* Tamaño ajustable del nombre */
+}
+
+.division {
+  font-size: 10vw; /* Tamaño ajustable de la división */
+  margin-top: 0.5rem; /* Ajuste del espaciado entre el nombre y la división */
+}
+
+/* Animación para que los textos aparezcan desplazándose */
+@keyframes slideIn {
+  0% {
     opacity: 0; /* Comienza invisible */
     transform: translateY(20px); /* Comienza desplazado */
-    animation: slideIn 1s forwards; /* Animación de entrada para el nombre */
   }
-  
-  @keyframes slideIn {
-    0% {
-      opacity: 0; /* Comienza invisible */
-      transform: translateY(20px); /* Comienza desplazado */
-    }
-    100% {
-      opacity: 1; /* Termina visible */
-      transform: translateY(0); /* Regresa a la posición original */
-    }
+  100% {
+    opacity: 1; /* Termina visible */
+    transform: translateY(0); /* Termina en la posición original */
   }
-  
-  /* Animación para el logo */
-  .container img {
-    opacity: 0; /* Comienza invisible */
-    transform: scale(0.8); /* Comienza más pequeño */
-    animation: zoomIn 1s forwards; /* Animación de entrada para el logo */
+}
+
+/* Animación divertida para el logo */
+.animated-logo {
+  width: 250px; /* Tamaño más grande del logo */
+  margin: 20px 0;
+  opacity: 0;
+  transform: scale(0.8) rotate(0deg); /* Comienza más pequeño y sin rotación */
+  animation: funZoom 2s forwards ease-in-out, bounce 2s infinite 2s; /* Animaciones combinadas */
+}
+
+/* Animación divertida de zoom con giro */
+@keyframes funZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg); /* Comienza más pequeño y sin rotación */
   }
-  
-  @keyframes zoomIn {
-    0% {
-      opacity: 0; /* Comienza invisible */
-      transform: scale(0.8); /* Comienza más pequeño */
-    }
-    100% {
-      opacity: 1; /* Termina visible */
-      transform: scale(1); /* Termina en tamaño normal */
-    }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(360deg); /* Agranda un poco y rota */
   }
-  
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg); /* Vuelve al tamaño normal sin rotación */
+  }
+}
+
+/* Animación adicional tipo rebote para el logo */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Comienza y termina en la posición normal */
+  }
+  40% {
+    transform: translateY(-30px); /* Rebote hacia arriba */
+  }
+  60% {
+    transform: translateY(-15px); /* Rebote hacia abajo */
+  }
+}

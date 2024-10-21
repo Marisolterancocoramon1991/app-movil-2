@@ -10,6 +10,7 @@ import { Motion, MotionEventResult } from '@capacitor/motion';
 import { Haptics } from '@capacitor/haptics';
 import { User } from '../interfaces/user';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -27,13 +28,12 @@ export class HomePage implements OnInit{
   private lastTriggerCall: string = '';
   private timerId: any;
 
-  constructor(public auth: AuthFirebaseService, public spinner: NgxSpinnerService) {
+  constructor(private router: Router, public auth: AuthFirebaseService, public spinner: NgxSpinnerService) {
     addIcons({ arrowRedoOutline });
   }
 
   handleLogout() {
-    this.stopListening();
-    this.auth.logout();
+    this.router.navigateByUrl("login");
   }
 
   ngOnInit(): void {

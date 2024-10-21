@@ -1,29 +1,47 @@
 .bg {
   background-image: url('../../../assets/images/bg.png');
-  // background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: 100% 100%; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #cccccc;
   height: 100%;
   width: 100%;
 }
 
-ion-fab {
-  margin-bottom: var(--ion-safe-area-bottom, 5rem);
-
+/* Centrado del logo */
+img {
+  display: block;
+  margin: 0 auto;
 }
 
-ion-fab-button::part(native) {
-  background-color: #b7f399;
-  border-radius: 15px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+/* Botones con ancho completo */
+.buttons-container ion-button {
+  width: 100%;
+  margin-bottom: 2px; /* Se redujo el margen inferior entre los botones */
+}
+
+.bottonIngresar {
+  width: 100%;
+}
+
+/* Ajustes para pantallas pequeñas (como un teléfono móvil) */
+@media (max-width: 768px) {
+  ion-grid {
+    padding: 0 15px;
+  }
+
+  .buttons-container ion-button {
+    font-size: 16px;
+  }
+}
+
+/* Mejora visual del botón de ingresar */
+ion-button {
+  font-weight: bold;
   color: black;
 }
 
-ion-fab-button::part(native):hover::after {
-  background-color: #a3e681;
-}
-
-ion-fab-button::part(native):active::after {
-  background-color: #87d361;
+/* Mejora de visibilidad para letras azules */
+h1,
+h4 {
+  color: #0044cc; /* Color azul más oscuro */
 }

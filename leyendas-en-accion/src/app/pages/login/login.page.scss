@@ -1,14 +1,51 @@
 .bg {
-    background-image: url('../../../assets/images/BG.png');
-    background-repeat: no-repeat; 
-    background-size: cover; /* Cambié para cubrir todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    background-color: #cccccc; /* Color de fondo de respaldo */
-    height: 100%;
-    width: 100%;
-  }
-    
-  ion-fab {
-    margin-bottom: var(--ion-safe-area-bottom, 5rem);
-  }
-  
+  background-image: url('../../../assets/images/BG.png');
+  background-repeat: no-repeat; 
+  background-size: cover; /* Cambié para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  background-color: #cccccc; /* Color de fondo de respaldo */
+  height: 100%;
+  width: 100%;
+}
+
+.text-imponente {
+  font-size: 2.5rem; 
+  font-weight: bold; 
+  color: #05010b; 
+  text-align: center; 
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+}
+
+.fab-buttons {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin: 5px; 
+}
+
+ion-button {
+  width: 100%; /* Hacer que el botón ocupe todo el ancho */
+  max-width: 100%; /* Ajustar el ancho máximo a 100% */
+  margin-bottom: 2px; 
+  padding: 12px 0; /* Ajustar el padding vertical para hacerlo más grande */
+  height: auto; /* Ajustar la altura automáticamente */
+  line-height: 1.2; /* Ajustar el espacio entre líneas */
+  font-size: 1.2rem; /* Aumentar el tamaño del texto para que sea más visible */
+  text-align: center; /* Centrar el texto dentro del botón */
+}
+
+.fab-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px; 
+  background-color: rgba(255, 255, 255, 0.8); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo para las letras de los botones */
+.fab-username {
+  color: purple; 
+  font-weight: bold; 
+}

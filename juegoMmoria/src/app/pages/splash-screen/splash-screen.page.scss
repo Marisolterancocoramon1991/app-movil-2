@@ -1,36 +1,55 @@
 /* Estilos generales para el fondo */
 .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: blue; /* Fondo azul */
-    z-index: -1; /* Asegura que el fondo esté detrás de los otros elementos */
-  }
-  
-  /* Contenedor del logo estático */
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-  }
-  
-  /* Logo estático */
-  #splash-container img {
-    max-width: 100%;
-    height: auto; /* Mantiene la relación de aspecto */
-  }
-  
-  /* Contenedor del logo dinámico */
-  #dynamic-logo-container {
-    display: none; /* Oculto inicialmente */
-  }
-  
-  /* Logo dinámico */
-  #dynamic-logo {
-    max-width: 100%;
-    height: auto; /* Mantiene la relación de aspecto */
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue; /* Fondo azul */
+  z-index: -1; /* Asegura que el fondo esté detrás de los otros elementos */
+}
+
+/* Contenedor del logo estático */
+.container {
+  display: flex;
+  flex-direction: column; /* Cambia a columna para el nombre y la división */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/* Logo estático */
+#splash-container img {
+  max-width: 100%;
+  height: auto; /* Mantiene la relación de aspecto */
+}
+#name {
+  font-size: 3rem; /* Aumenta el tamaño del texto */
+  color: black; /* Color del texto */
+  margin-top: 20px; /* Espacio superior */
+}
+
+/* Estilos para la división */
+#division {
+  font-size: 2rem; /* Aumenta el tamaño del texto */
+  color: black; /* Color del texto */
+  margin-top: 10px; /* Espacio superior */
+}
+
+/* Nombre y División */
+.fade-in {
+  opacity: 0;
+  transform: translateY(-20px); /* Mueve hacia arriba */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+}
+
+/* Contenedor del logo dinámico */
+#dynamic-logo-container {
+  display: none; /* Oculto inicialmente */
+}
+
+/* Logo dinámico */
+#dynamic-logo {
+  max-width: 100%;
+  height: auto; /* Mantiene la relación de aspecto */
+}

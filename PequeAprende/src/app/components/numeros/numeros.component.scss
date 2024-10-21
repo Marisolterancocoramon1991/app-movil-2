@@ -10,17 +10,23 @@
     align-items: center;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 10px; /* Espaciado entre los botones */
+    width: 100%; /* Ancho total de la cuadrícula */
+    padding: 20px; /* Espaciado interno */
+}
+
 .btnAnimales {
     border-radius: 15px; /* Bordes redondeados */
     padding: 20px; /* Espaciado interno */
-    margin: 10px; /* Espaciado entre botones */
     transition: transform 0.2s; /* Efecto de transición al hacer hover */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px; /* Tamaño de fuente grande para los números */
+    font-size: 32px; /* Tamaño de fuente más grande para los números */
     color: white; /* Color del texto en blanco */
-    width: 80px; /* Ancho fijo para todos los botones */
     height: 80px; /* Altura fija para todos los botones */
 }
 
@@ -28,6 +34,7 @@
     transform: scale(1.1); /* Escala al pasar el mouse */
 }
 
+/* Colores de los botones */
 .btnAnimales:nth-child(1) { background-color: #8B4513; } /* Marrón */
 .btnAnimales:nth-child(2) { background-color: #FF6347; } /* Rojo tomate */
 .btnAnimales:nth-child(3) { background-color: #32CD32; } /* Verde lima */
@@ -40,8 +47,10 @@
 .btnAnimales:nth-child(10) { background-color: #C0C0C0; color: black; } /* Gris */
 
 @media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    }
     .btnAnimales {
-        width: 60%; /* Botones ocupan 60% en pantallas pequeñas */
-        height: 50px; /* Altura fija para los botones en móviles */
+        height: 60px; /* Ajusta la altura en móviles */
     }
 }

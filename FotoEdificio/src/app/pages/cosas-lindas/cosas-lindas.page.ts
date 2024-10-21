@@ -10,6 +10,7 @@ import { FotosService } from 'src/app/services/fotos.service';
 import { InterceptorService } from 'src/app/services/interceptor.service';
 import { ModalController } from '@ionic/angular';
 import { GTortaComponent } from '../g-torta/g-torta.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cosas-lindas',
@@ -25,7 +26,9 @@ export class CosasLindasPage implements OnInit, OnDestroy {
   fotosUp: SafeUrl[] = []
   fotosUploadFinish: Foto[] = []
 
-  constructor(private fotosService: FotosService, private sanitizer: DomSanitizer, private auth: AuthFirebaseService,private interceptor:InterceptorService) { }
+  constructor(private fotosService: FotosService, private sanitizer: DomSanitizer,
+     private auth: AuthFirebaseService,private interceptor:InterceptorService,
+    private routs: Router) { }
   ngOnDestroy(): void {
     this.cosasSub?.unsubscribe();
   }
@@ -145,5 +148,7 @@ export class CosasLindasPage implements OnInit, OnDestroy {
   delFoto(foto:Foto) {
     this.fotosUploadFinish = this.fotosUploadFinish.filter(f => f != foto)
   }
-
+  irTorta(){
+    this.routs.navigate(['/torta']);
+  }
 }

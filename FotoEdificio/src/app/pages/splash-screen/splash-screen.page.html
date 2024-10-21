@@ -1,6 +1,13 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="splash-container">
+  <!-- Primera vista: Fondo estático -->
+  <div class="static-view" *ngIf="!showAnimation">
+    <img src="../../../assets/images/fotoEdificios.png" alt="Logo Estático" class="static-logo">
+  </div>
 
-  <div class="container ion-text-center">
-    <img src="../../../assets/images/icon.png" alt="Logo">
+  <!-- Segunda vista: Logo animado y nombres -->
+  <div class="dynamic-view" *ngIf="showAnimation">
+    <h2 class="name">{{ names[0] }}</h2> <!-- Nombre aparece primero -->
+    <img *ngIf="showLogo" src="../../../assets/images/icon.png" alt="Logo" class="dynamic-logo"> <!-- Logo en el medio -->
+    <h3 *ngIf="showDivision" class="division">{{ listNames[0] }}</h3> <!-- División aparece al final -->
   </div>
 </ion-content>

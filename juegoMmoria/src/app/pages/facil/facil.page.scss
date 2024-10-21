@@ -6,23 +6,22 @@
     height: 100%;
     width: 100%;
 }
+
 .btnAnimales {
-    width: 80px; /* Ajusta el ancho deseado */
-    height: 80px; /* Ajusta la altura deseada */
-    padding: 2px;
-    margin: 0.5rem;
-    position: relative; 
-    z-index: 10;
-    
-}
+    width: 150px; /* Ajusta el ancho deseado */
+    height: 150px; /* Ajusta la altura deseada */
+    padding: 20px;
+    margin: 15px; /* Espacio de 15 píxeles entre cada tarjeta */
+  }
+
 
 .btnAnimales:focus {
     outline: none;
 }
 
 .btnAnimales img {
-    width: 40%; /* Ajusta el tamaño de la imagen para que se ajuste al botón */
-    height: 40%; /* Ajusta el tamaño de la imagen para que se ajuste al botón */
+    width: 80%; /* Ajusta el tamaño de la imagen para que se ajuste al botón */
+    height: 80%; /* Ajusta el tamaño de la imagen para que se ajuste al botón */
     object-fit: contain; /* Mantener la relación de aspecto de la imagen */
 }
 

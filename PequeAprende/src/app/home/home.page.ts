@@ -13,6 +13,8 @@ export class HomePage {
   usuario!: Person;
   idioma!:string
   categoria:string = 'animales'
+  idiomaSeleccionado: string = ''; // Idioma seleccionado
+  categoriaSeleccionada: string = ''; // Categoría seleccionada
 
   constructor(private auth: AuthFirebaseService,private router:Router,private idiomaService:IdiomaService) { }
 
@@ -24,9 +26,11 @@ export class HomePage {
 
   cambiarCategoria(categoria:string){
     this.categoria = categoria;
+    this.categoriaSeleccionada = categoria;
   }
 
   cambiarIdioma(idioma:string){   
+    this.idiomaSeleccionado = idioma;
     this.idiomaService.setearIdioma(idioma); 
     switch(idioma) {
       case 'en-GB':

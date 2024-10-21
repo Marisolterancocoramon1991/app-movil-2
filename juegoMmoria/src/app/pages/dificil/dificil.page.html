@@ -3,35 +3,28 @@
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
-    <ion-title><div><app-timer></app-timer></div></ion-title>
+    <ion-title>
+      <div><app-timer></app-timer></div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Dificultad: Dificil <app-timer></app-timer></ion-title>
-      
+      <ion-title size="large">Dificultad: Difícil <app-timer></app-timer></ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div class="bg w-100 h-100"  style="overflow: hidden;">
-    <div class="row w-100 h-100 m-0">
-
-        <button *ngFor="let tarjeta of tarjetas" 
+  <div class="bg w-100 h-100" style="overflow: hidden;">
+    <div class="grid-container">
+      <button *ngFor="let tarjeta of tarjetas" 
         type="button" 
-        class="col-md-2 col-3 btn btn-dark btnAnimales " 
-        [ngClass]="{'btnSeleccionado':itemSeleccionado(tarjeta) && !itemError(tarjeta),'btnEncontrado':itemEncontrado(tarjeta),'btnError':itemError(tarjeta)}"
-        
-        
+        class="grid-item btn btn-dark btnAnimales" 
+        [ngClass]="{'btnSeleccionado': itemSeleccionado(tarjeta) && !itemError(tarjeta), 'btnEncontrado': itemEncontrado(tarjeta), 'btnError': itemError(tarjeta)}"
         (click)="seleccionarItem(tarjeta)">
-        <!-- {{tarjeta.valor}} -->
-            <img [src]="'../../../assets/frutas/'+tarjeta.valor+'.png'" *ngIf="itemSeleccionado(tarjeta) || itemEncontrado(tarjeta)">
-        </button>        
+        <img [src]="'../../../assets/frutas/' + tarjeta.valor + '.png'" *ngIf="itemSeleccionado(tarjeta) || itemEncontrado(tarjeta)">
+      </button>
     </div>
   </div>
-
-  <!-- <ion-button id="present-alert">Click Me</ion-button>
-<ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?" [buttons]="alertButtons"></ion-alert>
-   -->
 </ion-content>

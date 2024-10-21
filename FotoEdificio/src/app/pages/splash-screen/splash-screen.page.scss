@@ -17,6 +17,29 @@
   }
 }
 
+/* Animación de difuminado y movimiento */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Desplazamiento hacia abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a la posición original */
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px); /* Desplazamiento hacia abajo */
+  }
+}
+
 /* Mejorando la animación de fade */
 @keyframes fade {
   0%, 20%, 40%, 60%, 80%, 100% {
@@ -27,35 +50,7 @@
   }
 }
 
-.container {
-  -webkit-animation: fade 2s infinite;
-  animation: fade 2s infinite;
-
-  img {
-    height: 250px;
-    margin-top: 20%;
-    filter: drop-shadow(0px 0px 2px white);
-  }
-}
-
 /* Mejorando la animación de roll-in-blurred-left */
-@-webkit-keyframes roll-in-blurred-left {
-  0% {
-    -webkit-transform: translateX(0) rotate(0deg);
-    transform: translateX(0) rotate(0deg);
-    -webkit-filter: blur(0);
-    filter: blur(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateX(-1000px) rotate(-720deg);
-    transform: translateX(-1000px) rotate(-720deg);
-    -webkit-filter: blur(50px);
-    filter: blur(50px);
-    opacity: 0;
-  }
-}
-
 @keyframes roll-in-blurred-left {
   0% {
     transform: translateX(0) rotate(0deg);
@@ -69,16 +64,48 @@
   }
 }
 
-.name {
-  /* Activar animación de entrada */
-  -webkit-animation: roll-in-blurred-left .65s cubic-bezier(.23, 1.000, .32, 1.000) both;
-  animation: roll-in-blurred-left .65s cubic-bezier(.23, 1.000, .32, 1.000) both;
+.container {
+  animation: fade 2s infinite;
 
-  margin-top: 10%;
-  color: var(--white);
-  font-size: 10vw;
-  font-weight: bold;
-  font-family: 'Borel';
+  img {
+    height: 250px;
+    margin-top: 20%;
+    filter: drop-shadow(0px 0px 2px white);
+  }
+}
+
+/* Estilo para el nombre */
+.name {
+  text-align: center; /* Centra el texto horizontalmente */
+  margin: 0 auto; /* Asegura que el elemento ocupe el espacio disponible */
+  font-size: 4rem;
+  color: rgb(0, 0, 0);
+  animation: fadeIn 1s forwards; /* Animación de entrada */
+  opacity: 0; /* Comienza invisible */
+}
+
+/* Estilo para la división */
+.division {
+  text-align: center; /* Centra el texto horizontalmente */
+  margin: 0 auto; /* Asegura que el elemento ocupe el espacio disponible */
+  font-size: 4rem;
+  color: rgb(0, 0, 0);
+  animation: fadeIn 1s forwards; /* Animación de entrada */
+  animation-delay: 0.5s; /* Retraso para que aparezca después del nombre */
+  opacity: 0; /* Comienza invisible */
+}
+
+/* Logo dinámico */
+.dynamic-logo {
+  opacity: 0; /* Comienza invisible */
+  transform: scale(0.8); /* Escala hacia abajo para el efecto de entrada */
+  animation: fadeIn 1s forwards; /* Animación de entrada */
+  transition: opacity 1s ease; /* Suaviza la entrada */
+}
+
+/* Para aplicar el efecto de salida */
+.name.out, .division.out, .dynamic-logo.out {
+  animation: fadeOut 1s forwards; /* Animación de salida */
 }
 
 /* Fondo con gradiente dinámico */
@@ -90,19 +117,5 @@ ion-content {
 
 /* Mejorando animaciones de salida */
 .animation {
-  -webkit-animation: slide-out-elliptic-right-bck 1s ease-in 2s both;
-  animation: slide-out-elliptic-right-bck 1s ease-in 2s both;
-}
-
-@keyframes slide-out-elliptic-right-bck {
-  0% {
-    transform: translateX(0) rotateY(0) scale(1);
-    transform-origin: -1800px 50%;
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(1000px) rotateY(-30deg) scale(0);
-    transform-origin: -100% 50%;
-    opacity: 1;
-  }
+  animation: fadeOut 1s forwards; /* Animación de salida */
 }

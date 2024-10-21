@@ -28,6 +28,7 @@ export class ScoresPage implements OnInit {
       this.interceptor.updateOverlayState(false)
     })
   }
+   
 
   irAJugar(dificultad:string)
   {    

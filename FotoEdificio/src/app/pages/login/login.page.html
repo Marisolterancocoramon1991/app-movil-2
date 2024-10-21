@@ -1,32 +1,30 @@
 <ion-content>
   <div class="bg">
-    <div style="display: flex; justify-content: center;">
-      <img src="../../../assets/images/icon.png" style="max-width: 50%; height: auto; margin-top: 10%;">
-    </div>
-    
-    <form [formGroup]="loginForm" style="margin: 20px;">
+    <form [formGroup]="loginForm" style="width: 100%; padding: 20px;">
       <ion-grid>
-        <ion-row color="primary" justify-content-center>
+        <ion-row justify-content-center>
           <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
             <div text-center>
               <p class="display-6">Iniciar sesión</p>
             </div>
             <div padding>
               <ion-item>
-                <ion-input type="email" label="Correo" formControlName="email" required></ion-input>
+                <ion-label position="floating">Correo</ion-label>
+                <ion-input type="email" formControlName="email" required></ion-input>
                 <ng-container *ngIf="loginForm.get('email')?.hasError('email')">
                   <small class="text-danger">Formato inválido</small>
                 </ng-container>
               </ion-item>
               <ion-item>
-                <ion-input type="password" label="Clave" formControlName="password" required></ion-input>
+                <ion-label position="floating">Clave</ion-label>
+                <ion-input type="password" formControlName="password" required></ion-input>
                 <ng-container *ngIf="loginForm.get('password')?.hasError('minlength')">
                   <small class="text-danger">La clave debe tener mínimo {{loginForm.get('password')?.getError('minlength').requiredLength}} caracteres</small>
                 </ng-container>
               </ion-item>
             </div>
             <div padding>
-              <ion-button size="large" type="submit" color="primary" (click)="this.login(loginForm)" expand="block" [disabled]="loginForm.invalid">
+              <ion-button size="large" type="submit" color="primary" (click)="this.login(loginForm)" expand="block" [disabled]="loginForm.invalid" shape="round">
                 Ingresar
               </ion-button>
             </div>
@@ -34,41 +32,24 @@
         </ion-row>
       </ion-grid>
     </form>
-    
+
     <hr>
     <h4 class="text-secondary text-center">¿No estás registrado?</h4>
-    <ion-button expand="block" class="tertiary" (click)="goToRegistro()">Registro</ion-button>
-
-    <ion-fab slot="fixed" vertical="bottom" horizontal="start">
-      <ion-fab-button>
-        <ion-icon name="people"></ion-icon>
-      </ion-fab-button>
-
-      <ion-fab-list side="end">
-        <ion-fab-button color="secondary" (click)="completarCampos(1)">
-          <div class="fab-content">
-            <span class="fab-username">User1</span>
-            
-          </div>
-        </ion-fab-button>
-      
-        <ion-fab-button color="secondary" (click)="completarCampos(2)">
-          <div class="fab-content">
-            <span class="fab-username">User2</span>
+    <ion-button expand="block" color="warning" (click)="goToRegistro()" shape="round">Registro</ion-button>
     
-          </div>
-        </ion-fab-button>
-      
-        <ion-fab-button color="secondary" (click)="completarCampos(3)">
-          <div class="fab-content">
-            <span class="fab-username">User3</span>
-          </div>
-        </ion-fab-button>
-      </ion-fab-list>
-      
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+      <img src="../../../assets/images/icon.png" class="img-alarm" style="max-width: 60%; height: auto;">
+    </div>
 
-
-    </ion-fab>
+    <div class="d-flex justify-content-center mt-4">
+      <ion-button expand="full" (click)="completarCampos(1)" shape="round" color="secondary">User1</ion-button>
+    </div>
+    <div class="d-flex justify-content-center mt-1">
+      <ion-button expand="full" (click)="completarCampos(2)" shape="round" color="secondary">User2</ion-button>
+    </div>
+    <div class="d-flex justify-content-center mt-1">
+      <ion-button expand="full" (click)="completarCampos(3)" shape="round" color="secondary">User3</ion-button>
+    </div>
+    
   </div>
 </ion-content>
-

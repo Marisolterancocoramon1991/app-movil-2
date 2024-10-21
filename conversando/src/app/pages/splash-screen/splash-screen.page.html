@@ -5,15 +5,11 @@
   </div>
 
   <!-- Segunda vista: Logo animado y nombres -->
-  <div class="container ion-text-center" *ngIf="showAnimation">
+  <div class="container ion-text-center animated-background" *ngIf="showAnimation">
+    <h2 class="name animation text-light">{{ names[0] }}</h2> <!-- Nombre encima del logo -->
     <img src="../../../assets/imagenes/ConversandoAula.png" alt="Logo" class="logo-animation">
+    <h4 class="division text-light">{{ listNames[0] }}</h4> <!-- División debajo del logo -->
   </div>
-
-  <!-- Animación de nombres -->
-  <ng-container *ngIf="showAnimation">
-    <div class="ion-text-center" *ngFor="let name of listNames">
-      <h2 class="name animation text-light">{{ name }}</h2>
-    </div>
-  </ng-container>
 </ion-content>
+
 

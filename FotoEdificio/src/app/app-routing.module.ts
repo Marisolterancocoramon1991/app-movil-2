@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { GTortaComponent } from './pages/g-torta/g-torta.component';
+import { GBarraComponent } from './pages/g-barra/g-barra.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,15 @@ const routes: Routes = [
     path: 'mis-fotos',
     loadChildren: () => import('./pages/mis-fotos/mis-fotos.module').then( m => m.MisFotosPageModule)
   },
+  {
+    path: 'torta',
+    component: GTortaComponent
+  },
+  {
+    path: 'barra',
+    component: GBarraComponent
+  },
+  
 ];
 
 @NgModule({
